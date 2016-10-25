@@ -14,7 +14,6 @@ gulp.task('sass', function () {
 // Watch task
 // Watches Scss files
 gulp.task('watch', function () {
-    return gulp.watch('scss/*.scss',['sass']);
-               
+    return gulp.watch('scss/*.scss',['sass']);               
 });
 

@@ -1,7 +1,7 @@
 @import "variables";
 @import "mixins";
 @import "https://fonts.googleapis.com/css?family=Roboto";
-
+@import "https://fonts.googleapis.com/css?family=Bungee+Shade";
 
 body{
     margin: 0;
@@ -10,21 +10,29 @@ body{
 
 header{
     width:100%;
-    height:100px;
+    height:$header-height;
     background-color:#eee;
+    @include flex(center,space-around);
 }
 
-.brand__name>h2{
+button{
+    height:35px;
+    min-width: 100px;
+    border: 0;
+    cursor:pointer;
+    border-right:1px solid grey;
+    color: white;
+    background-color: #111;
+}
+
+.brand__title{
     margin: 0;
+    font-size:2em;
+    font-family: 'Bungee Shade', cursive;    
 }
 
 .app__info__buttons{
     display: flex;    
 }
 
-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
 
