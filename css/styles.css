@@ -2,7 +2,7 @@
 @import "https://fonts.googleapis.com/css?family=Bungee+Shade";
 body {
   margin: 0;
-  padding: 0;
+  height: 100%;
 }
 
 header {
@@ -28,6 +28,11 @@ button {
   border-right: 1px solid grey;
   color: white;
   background-color: #545151;
+}
+
+button:hover, button:focus {
+  background-color: #3a3838;
+  outline: none;
 }
 
 .brand__title {

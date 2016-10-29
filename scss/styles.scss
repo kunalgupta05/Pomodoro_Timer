@@ -5,13 +5,13 @@
 
 body{
     margin: 0;
-    padding: 0;
+    height: 100%;
 }
 
 header{
     width:100%;
     height:$header-height;
-    background-color:#eee;
+    background-color:$header-bgColor;
     @include flex(center,space-around);
 }
 
@@ -23,6 +23,10 @@ button{
     border-right:1px solid grey;
     color: white;
     background-color: $header-buttons-color;
+    &:hover,&:focus{
+        background-color: darken($header-buttons-color, 10%);
+        outline: none;       
+    }
 }
 
 .brand__title{
