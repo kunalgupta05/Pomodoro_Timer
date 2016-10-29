@@ -3,3 +3,17 @@
     align-items: $align-items;
     justify-content: $justify-content;
 }
+
+@mixin buttonStyles($height,$width,$border-color,$bgColor){
+    height:$height;
+    width: $width;
+    border: 0;
+    cursor:pointer;
+    border-right:1px solid $border-color;
+    color: white;
+    background-color: $bgColor;
+    &:hover,&:focus{
+        background-color: darken($bgColor, 10%);
+        outline: none;       
+    }
+}

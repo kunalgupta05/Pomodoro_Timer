@@ -15,19 +15,6 @@ header{
     @include flex(center,space-around);
 }
 
-button{
-    height:35px;
-    min-width: 100px;
-    border: 0;
-    cursor:pointer;
-    border-right:1px solid grey;
-    color: white;
-    background-color: $header-buttons-color;
-    &:hover,&:focus{
-        background-color: darken($header-buttons-color, 10%);
-        outline: none;       
-    }
-}
 
 .brand__title{
     margin: 0;
@@ -37,7 +24,24 @@ button{
 }
 
 .app__info__buttons{
-    display: flex;    
+    display: flex;  
+    button 
+    {
+        @include buttonStyles(35px,100px,gray,$header-buttons-color);       
+    }  
+}
+
+.main_body{
+    padding-top: 20px;
+    @include flex(flex-start,center);    
+}
+
+.pomodoro_timer_buttons{
+    display: flex;
+    button{
+        @include buttonStyles(30px,200px,slategray,$timer-buttons-color);
+        font-weight: bold;       
+    }    
 }
 
 
