@@ -1,11 +1,13 @@
+'use strict'
+
 function Timer(canvas){
     // params
-    this.WIDTH = 300;
-    this.HEIGHT = 300;
+    this.WIDTH = 250;
+    this.HEIGHT = 250;
     this.TIMER_BORDER = 3;
     this.TIMER_COLOR1 = "#ececec";
     this.TIMER_COLOR2 = "#3366CC";
-    this.TIMER_DURATION = 60000;
+    this.TIMER_DURATION = 1500000;
     this.TIME_ELAPSED = 0;
     this.DOT_RADIUS = 6;
     this.MAXFPS = 60;

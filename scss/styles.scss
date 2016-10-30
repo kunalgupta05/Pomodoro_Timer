@@ -25,7 +25,7 @@ header{
         display: flex;  
         button 
         {
-            @include buttonStyles(35px,100px,$header-buttons-borderColor,$header-buttons-color);       
+            @include buttonStyles(35px,100px,$header-buttons-color,$header-buttons-borderColor);       
         }  
     }
 }
@@ -38,13 +38,32 @@ header{
     .pomodoro_timer_buttons{
         display: flex;
         button{
-            @include buttonStyles(30px,200px,$timer-buttons-borderColor,$timer-buttons-color);
+            @include buttonStyles(30px,250px,$timer-buttons-color,$timer-buttons-borderColor);
             font-weight: bold;       
         }    
     } 
 
     #myCanvas{
-        padding-top: 15px;
+        padding-top: 18px;
+    }
+
+    .user_action_buttons{
+        padding-top: 20px;
+
+        button{            
+            @include buttonStyles(55px,100px,gray);
+            font-weight:bold;
+            margin: 20px;         
+        }
+
+        #startButton{
+            background-color: #2ea92e;
+        }
+
+        
+        #stopButton{
+            background-color: red;
+        }
     }
 }
 

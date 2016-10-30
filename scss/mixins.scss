@@ -4,12 +4,12 @@
     justify-content: $justify-content;
 }
 
-@mixin buttonStyles($height,$width,$border-color,$bgColor){
+@mixin buttonStyles($height,$width,$bgColor,$border-color:""){
     height:$height;
     width: $width;
     border: 0;
     cursor:pointer;
-    border-right:1px solid $border-color;
+    border-right:1px solid unquote($border-color);
     color: white;
     background-color: $bgColor;
     &:hover,&:focus{
