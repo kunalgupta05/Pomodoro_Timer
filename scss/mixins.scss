@@ -13,7 +13,7 @@
     color: white;
     background-color: $bgColor;
     &:hover,&:focus{
-        background-color: darken($bgColor, 10%);
+        background-color: darken($bgColor, 15%);
         outline: none;       
     }
 }

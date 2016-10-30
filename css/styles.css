@@ -44,7 +44,7 @@ header .app__info__buttons button {
 }
 
 header .app__info__buttons button:hover, header .app__info__buttons button:focus {
-  background-color: #3a3838;
+  background-color: #2d2b2b;
   outline: none;
 }
 
@@ -82,7 +82,7 @@ header .app__info__buttons button:hover, header .app__info__buttons button:focus
 }
 
 .main_body .pomodoro_timer_buttons button:hover, .main_body .pomodoro_timer_buttons button:focus {
-  background-color: #1b83a6;
+  background-color: #177290;
   outline: none;
 }
 
@@ -107,7 +107,7 @@ header .app__info__buttons button:hover, header .app__info__buttons button:focus
 }
 
 .main_body .user_action_buttons button:hover, .main_body .user_action_buttons button:focus {
-  background-color: #676767;
+  background-color: #5a5a5a;
   outline: none;
 }
 
@@ -115,6 +115,16 @@ header .app__info__buttons button:hover, header .app__info__buttons button:focus
   background-color: #2ea92e;
 }
 
+.main_body .user_action_buttons #startButton:hover, .main_body .user_action_buttons #startButton:focus {
+  background-color: #1e6d1e;
+  outline: none;
+}
+
 .main_body .user_action_buttons #stopButton {
   background-color: red;
+}
+
+.main_body .user_action_buttons #stopButton:hover, .main_body .user_action_buttons #stopButton:focus {
+  background-color: #b30000;
+  outline: none;
 }

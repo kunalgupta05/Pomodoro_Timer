@@ -1,5 +1,7 @@
 'use strict'
 
+var timeString="";
+
 function Timer(canvas){
     // params
     this.WIDTH = 250;
@@ -7,7 +9,7 @@ function Timer(canvas){
     this.TIMER_BORDER = 3;
     this.TIMER_COLOR1 = "#ececec";
     this.TIMER_COLOR2 = "#3366CC";
-    this.TIMER_DURATION = 1500000;
+    this.TIMER_DURATION = 60000;
     this.TIME_ELAPSED = 0;
     this.DOT_RADIUS = 6;
     this.MAXFPS = 60;
@@ -22,7 +24,8 @@ Timer.prototype.timerString = function () {
     var h = parseInt(ts / 3600) % 24;
     var m = parseInt(ts / 60) % 60;
     var s = ts % 60;
-    return (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
+    timeString = (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
+    return timeString;
 }
 
 

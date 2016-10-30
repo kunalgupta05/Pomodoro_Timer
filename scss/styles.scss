@@ -58,11 +58,18 @@ header{
 
         #startButton{
             background-color: #2ea92e;
+            &:hover,&:focus{
+                background-color: darken(#2ea92e, 15%);
+                outline: none;       
+            }
         }
-
         
         #stopButton{
             background-color: red;
+            &:hover,&:focus{
+                background-color: darken(red, 15%);
+                outline: none;       
+            }
         }
     }
 }
