@@ -53,12 +53,15 @@ header .app__info__buttons button:hover, header .app__info__buttons button:focus
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: flex-start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .main_body .pomodoro_timer_buttons {
@@ -81,4 +84,8 @@ header .app__info__buttons button:hover, header .app__info__buttons button:focus
 .main_body .pomodoro_timer_buttons button:hover, .main_body .pomodoro_timer_buttons button:focus {
   background-color: #1b83a6;
   outline: none;
+}
+
+.main_body #myCanvas {
+  padding-top: 15px;
 }

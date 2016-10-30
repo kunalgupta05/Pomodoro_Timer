@@ -32,8 +32,8 @@ header{
 
 .main_body{
     padding-top: 20px;
-    @include flex(flex-start,center);
-
+    @include flex(center,center);
+    flex-direction: column;
     
     .pomodoro_timer_buttons{
         display: flex;
@@ -42,7 +42,12 @@ header{
             font-weight: bold;       
         }    
     } 
+
+    #myCanvas{
+        padding-top: 15px;
+    }
 }
+
 
 
 
