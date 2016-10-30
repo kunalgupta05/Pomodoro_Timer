@@ -13,35 +13,38 @@ header{
     height:$header-height;
     background-color:$header-bgColor;
     @include flex(center,space-around);
-}
 
+    #brand__title{
+        margin: 0;
+        font-size:$brand-title-size;
+        color: $brand-title-color;
+        font-family: 'Bungee Shade', cursive;    
+    }
 
-.brand__title{
-    margin: 0;
-    font-size:$brand-title-size;
-    color: $brand-title-color;
-    font-family: 'Bungee Shade', cursive;    
-}
-
-.app__info__buttons{
-    display: flex;  
-    button 
-    {
-        @include buttonStyles(35px,100px,gray,$header-buttons-color);       
-    }  
+    .app__info__buttons{
+        display: flex;  
+        button 
+        {
+            @include buttonStyles(35px,100px,$header-buttons-borderColor,$header-buttons-color);       
+        }  
+    }
 }
 
 .main_body{
     padding-top: 20px;
-    @include flex(flex-start,center);    
+    @include flex(flex-start,center);
+
+    
+    .pomodoro_timer_buttons{
+        display: flex;
+        button{
+            @include buttonStyles(30px,200px,$timer-buttons-borderColor,$timer-buttons-color);
+            font-weight: bold;       
+        }    
+    } 
 }
 
-.pomodoro_timer_buttons{
-    display: flex;
-    button{
-        @include buttonStyles(30px,200px,slategray,$timer-buttons-color);
-        font-weight: bold;       
-    }    
-}
+
+
 
 
