@@ -1,6 +1,7 @@
 'use strict'
 
 var timeString="";
+var timeElapsedAtStop;
 
 function Timer(canvas){
     // params
@@ -41,7 +42,7 @@ Timer.prototype.drawTimer = function () {
         y: this.canvas.height / 2
     };
     var r = (this.canvas.width - this.TIMER_BORDER) / 2 - this.DOT_RADIUS;
-    var eAngle = (1.5 - 2.0 * this.TIME_ELAPSED / this.TIMER_DURATION) * Math.PI;
+    var eAngle = (1.5 - 2.0 * this.TIME_ELAPSED / this.TIMER_DURATION) * Math.PI;    
     var dot = {
         x: center.x + r * Math.cos(eAngle),
         y: center.y + r * Math.sin(eAngle)
