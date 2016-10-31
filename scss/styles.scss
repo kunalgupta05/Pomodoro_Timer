@@ -57,9 +57,9 @@ header{
         }
 
         #startButton{
-            background-color: #2ea92e;
+            background-color:$start-button-color;
             &:hover,&:focus{
-                background-color: darken(#2ea92e, 15%);
+                background-color: darken($start-button-color, 15%);
                 outline: none;       
             }
         }
