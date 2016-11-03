@@ -140,3 +140,7 @@ header .app__info__buttons button:hover, header .app__info__buttons button:focus
   background-color: #b30000;
   outline: none;
 }
+
+#resetTimerModal {
+  padding-top: 15%;
+}
