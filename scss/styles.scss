@@ -6,8 +6,6 @@
 body{
     margin: 0;
     height: 100%;
-    @include flex(center,center);
-    flex-direction:column;
 }
 
 header{
