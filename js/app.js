@@ -9,9 +9,15 @@ var stopButton=document.getElementById('stopButton');
 var resetButton=document.getElementById('resetButton');
 var resetTimerModal=document.getElementById('resetTimerModal');
 var timerStarted=false;
-var setPomodoroTimer=60000;
-var setShortBreakTimer=300000;
-var setLongBreakTimer=600000;
+var setPomodoroTimer=parseInt(document.getElementById('Reset__Pomodoro__Timer__input').innerHTML)*60000;
+var setShortBreakTimer=parseInt(document.getElementById('Reset__shortBreak__Timer__input').innerHTML)*60000;
+var setLongBreakTimer=parseInt(document.getElementById('Reset__longBreak__Timer__input').innerHTML)*60000;
+var decrementPomodoro=document.getElementById('Reset__Pomodoro__Timer__decrement');
+var incrementPomodoro=document.getElementById('Reset__Pomodoro__Timer__increment');
+var decrementShortBreak=document.getElementById('Reset__shortBreak__Timer__decrement');
+var incrementShortBreak=document.getElementById('Reset__shortBreak__Timer__increment');
+var decrementLongBreak=document.getElementById('Reset__longBreak__Timer__decrement');
+var incrementLongBreak=document.getElementById('Reset__longBreak__Timer__increment');
 
 
 // EventListeners
