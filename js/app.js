@@ -85,15 +85,15 @@ function resetTimer() {
     $('#resetTimerModal').modal('show');
 }
 
-
-function checkPomodoroTimerValue(pomoInput) {
-    console.log(pomoInput);
-    return pomoInput > 0 && pomoInput <= 25 ? true : false;
+// Checking the pomodoro timer value for increment/decrement timer
+function checkPomodoroTimerValue(pomoInput) {    
+    return pomoInput >= 1  && pomoInput < 120 ? true : false;
 }
 
+// decrement pomodoro timer value
 function decrementPomodoroTimer() {    
-    var pomoInput=setPomodoroTimer/60000;
-    if (checkPomodoroTimerValue(pomoInput)) {
+    var pomoInput=parseInt(setPomodoroInput.innerHTML);
+    if (checkPomodoroTimerValue(pomoInput) && pomoInput!==1) {
         pomoInput--;
         setPomodoroInput.innerHTML = pomoInput;
     }
@@ -102,8 +102,9 @@ function decrementPomodoroTimer() {
     }
 }
 
+// increment pomodoro timer value
 function incrementPomodoroTimer() {
-    var pomoInput=setPomodoroTimer/60000;
+    var pomoInput=parseInt(setPomodoroInput.innerHTML);
     if (checkPomodoroTimerValue(pomoInput)) {
         pomoInput++;
         setPomodoroInput.innerHTML = pomoInput;
