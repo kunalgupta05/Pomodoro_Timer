@@ -33,10 +33,10 @@ stopButton.addEventListener('click', stopTimer, false);
 resetButton.addEventListener('click', resetTimer, false);
 decrementPomodoro.addEventListener('click', decrementPomodoroTimer, false);
 incrementPomodoro.addEventListener('click', incrementPomodoroTimer, false);
-// decrementShortBreak.addEventListener('click', decrementShortBreakTimer, false);
-// incrementShortBreak.addEventListener('click', incrementShortBreakTimer, false);
-// decrementLongBreak.addEventListener('click', decrementLongBreakTimer, false);
-// incrementLongBreak.addEventListener('click', incrementLongBreakTimer, false);
+decrementShortBreak.addEventListener('click', decrementShortBreakTimer, false);
+incrementShortBreak.addEventListener('click', incrementShortBreakTimer, false);
+decrementLongBreak.addEventListener('click', decrementLongBreakTimer, false);
+incrementLongBreak.addEventListener('click', incrementLongBreakTimer, false);
 
 
 // Common utility function which sets the timer according to timings set by the user
@@ -85,6 +85,14 @@ function resetTimer() {
     $('#resetTimerModal').modal('show');
 }
 
+
+function renderResettedTimer(timerValue){
+    t.TIME_ELAPSED=0;
+    t.TIMER_DURATION=timerValue*60000;
+    t.render();
+}
+
+
 // Checking the pomodoro timer value for increment/decrement timer
 function checkPomodoroTimerValue(pomoInput) {    
     return pomoInput >= 1  && pomoInput < 120 ? true : false;
@@ -96,6 +104,8 @@ function decrementPomodoroTimer() {
     if (checkPomodoroTimerValue(pomoInput) && pomoInput!==1) {
         pomoInput--;
         setPomodoroInput.innerHTML = pomoInput;
+        setPomodoroTimer=pomoInput*60000;
+        renderResettedTimer(pomoInput);  
     }
     else {
         alert("Pomodoro timer can't be less than 1 minute");
@@ -108,8 +118,77 @@ function incrementPomodoroTimer() {
     if (checkPomodoroTimerValue(pomoInput)) {
         pomoInput++;
         setPomodoroInput.innerHTML = pomoInput;
+        setPomodoroTimer=pomoInput*60000;
+        renderResettedTimer(pomoInput);
     }
     else {
         alert("Concentrating for more than 2 hours is tough. You should take some break as well!");
     }
 }
+
+// Checking the short break timer value for increment/decrement timer
+function checkShortBreakTimerValue(shortBreakInput) {    
+    return shortBreakInput >= 1  && shortBreakInput < 9 ? true : false;
+}
+
+// decrement short break timer value
+function decrementShortBreakTimer() {    
+    var shortBreakInput=parseInt(setShortBreakTimerInput.innerHTML);
+    if (checkShortBreakTimerValue(shortBreakInput) && shortBreakInput!==1) {
+        shortBreakInput--;
+        setShortBreakTimerInput.innerHTML = shortBreakInput;
+        setShortBreakTimer=shortBreakInput*60000;
+        renderResettedTimer(shortBreakInput);
+    }
+    else {
+        alert("Short Break timer can't be less than 1 minute.");
+    }
+}
+
+// increment short break timer value
+function incrementShortBreakTimer() {
+    var shortBreakInput=parseInt(setShortBreakTimerInput.innerHTML);
+    if (checkShortBreakTimerValue(shortBreakInput)) {
+        shortBreakInput++;
+        setShortBreakTimerInput.innerHTML = shortBreakInput;
+        setShortBreakTimer=shortBreakInput*60000;
+        renderResettedTimer(shortBreakInput);
+    }
+    else {
+        alert("Too long for a short break isn't it? Try setting timer for long break.");
+    }
+}
+
+// Checking the long break timer value for increment/decrement timer
+function checkLongBreakTimerValue(longBreakInput) {    
+    return longBreakInput >= 10  && longBreakInput < 60 ? true : false;
+}
+
+// decrement long break timer value
+function decrementLongBreakTimer() {    
+    var longBreakInput=parseInt(setLongBreakTimerInput.innerHTML);
+    if (checkLongBreakTimerValue(longBreakInput) && longBreakInput!==10) {
+        longBreakInput--;
+        setLongBreakTimerInput.innerHTML = longBreakInput;
+        setLongBreakTimer=longBreakInput*60000;
+        renderResettedTimer(longBreakInput);
+    }
+    else {
+        alert("Long Break timer can't be less than 10 minutes.");
+    }
+}
+
+// increment long break timer value
+function incrementLongBreakTimer() {
+    var longBreakInput=parseInt(setLongBreakTimerInput.innerHTML);
+    if (checkLongBreakTimerValue(longBreakInput)) {
+        longBreakInput++;
+        setLongBreakTimerInput.innerHTML = longBreakInput;
+        setLongBreakTimer=longBreakInput*60000;
+        renderResettedTimer(longBreakInput);
+    }
+    else {
+        alert("Taking a break this long will break your concentration.");
+    }
+}
+
