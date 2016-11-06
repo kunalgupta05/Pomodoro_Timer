@@ -2,6 +2,11 @@
 
 //Variables
 var timerStarted = false;
+var tabStatus={
+    pomodoro:true,
+    shortBreak:false,
+    longBreak:false
+}
 var startPomodoro = document.getElementById('startPomodoro');
 var shortBreak = document.getElementById('shortBreak');
 var longBreak = document.getElementById('longBreak');
@@ -51,22 +56,34 @@ function setupTimer(timeElapsed, timerDuration) {
 
 // function which runs the timer when pomodoro or start button is clicked
 function pomodoroTimer() {
+    tabStatus.pomodoro=true;
+    tabStatus.shortBreak=false;
+    tabStatus.longBreak=false;
     setupTimer(0, setPomodoroTimer);
 }
 
 // function which resets the timer to short break
-function shortBreakTimer() {
+function shortBreakTimer() {    
+    tabStatus.pomodoro=false;
+    tabStatus.shortBreak=true;
+    tabStatus.longBreak=false;
     setupTimer(0, setShortBreakTimer);
 }
 
 // function which resets the timer to long break
-function longBreakTimer() {
+function longBreakTimer() {    
+    tabStatus.pomodoro=false;
+    tabStatus.shortBreak=false;
+    tabStatus.longBreak=true;
     setupTimer(0, setLongBreakTimer);
 }
 
 
 //function which starts of the pomodoro on click of start button
-function startTimer() {
+function startTimer() {    
+    tabStatus.pomodoro=true;
+    tabStatus.shortBreak=false;
+    tabStatus.longBreak=false;
     if (!timerStarted) {
         var timeArray = timeString.split(':');
         var totalMilliseconds = ((parseInt(timeArray[0]) * 60) + (parseInt(timeArray[1]))) * 1000;        
@@ -105,7 +122,10 @@ function decrementPomodoroTimer() {
         pomoInput--;
         setPomodoroInput.innerHTML = pomoInput;
         setPomodoroTimer=pomoInput*60000;
-        renderResettedTimer(pomoInput);  
+        if(tabStatus.pomodoro)
+        {
+            renderResettedTimer(pomoInput);
+        }   
     }
     else {
         alert("Pomodoro timer can't be less than 1 minute");
@@ -119,7 +139,10 @@ function incrementPomodoroTimer() {
         pomoInput++;
         setPomodoroInput.innerHTML = pomoInput;
         setPomodoroTimer=pomoInput*60000;
-        renderResettedTimer(pomoInput);
+        if(tabStatus.pomodoro)
+        {
+            renderResettedTimer(pomoInput);
+        } 
     }
     else {
         alert("Concentrating for more than 2 hours is tough. You should take some break as well!");
@@ -138,7 +161,10 @@ function decrementShortBreakTimer() {
         shortBreakInput--;
         setShortBreakTimerInput.innerHTML = shortBreakInput;
         setShortBreakTimer=shortBreakInput*60000;
-        renderResettedTimer(shortBreakInput);
+        if(tabStatus.shortBreak)
+        {
+            renderResettedTimer(shortBreakInput);
+        } 
     }
     else {
         alert("Short Break timer can't be less than 1 minute.");
@@ -152,7 +178,10 @@ function incrementShortBreakTimer() {
         shortBreakInput++;
         setShortBreakTimerInput.innerHTML = shortBreakInput;
         setShortBreakTimer=shortBreakInput*60000;
-        renderResettedTimer(shortBreakInput);
+        if(tabStatus.shortBreak)
+        {
+            renderResettedTimer(shortBreakInput);
+        } 
     }
     else {
         alert("Too long for a short break isn't it? Try setting timer for long break.");
@@ -171,7 +200,10 @@ function decrementLongBreakTimer() {
         longBreakInput--;
         setLongBreakTimerInput.innerHTML = longBreakInput;
         setLongBreakTimer=longBreakInput*60000;
-        renderResettedTimer(longBreakInput);
+        if(tabStatus.longBreak)
+        {
+            renderResettedTimer(longBreakInput);
+        } 
     }
     else {
         alert("Long Break timer can't be less than 10 minutes.");
@@ -185,7 +217,10 @@ function incrementLongBreakTimer() {
         longBreakInput++;
         setLongBreakTimerInput.innerHTML = longBreakInput;
         setLongBreakTimer=longBreakInput*60000;
-        renderResettedTimer(longBreakInput);
+        if(tabStatus.longBreak)
+        {
+            renderResettedTimer(longBreakInput);
+        } 
     }
     else {
         alert("Taking a break this long will break your concentration.");
