@@ -87,7 +87,7 @@ header .app__info__buttons button:hover, header .app__info__buttons button:focus
 }
 
 .main_body #myCanvas {
-  padding-top: 18px;
+  padding-top: 20px;
 }
 
 .main_body .user_action_buttons {
