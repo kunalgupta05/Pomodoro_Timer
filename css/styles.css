@@ -13,11 +13,11 @@ header {
   display: -ms-flexbox;
   display: flex;
   -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-justify-content: space-around;
-      -ms-flex-pack: distribute;
-          justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
 }
 
 header #brand__title {
@@ -43,7 +43,8 @@ header .app__info__buttons button {
   background-color: #545151;
 }
 
-header .app__info__buttons button:hover, header .app__info__buttons button:focus {
+header .app__info__buttons button:hover,
+header .app__info__buttons button:focus {
   background-color: #2d2b2b;
   outline: none;
 }
@@ -54,14 +55,14 @@ header .app__info__buttons button:hover, header .app__info__buttons button:focus
   display: -ms-flexbox;
   display: flex;
   -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .main_body .pomodoro_timer_buttons {
@@ -81,7 +82,8 @@ header .app__info__buttons button:hover, header .app__info__buttons button:focus
   font-weight: bold;
 }
 
-.main_body .pomodoro_timer_buttons button:hover, .main_body .pomodoro_timer_buttons button:focus {
+.main_body .pomodoro_timer_buttons button:hover,
+.main_body .pomodoro_timer_buttons button:focus {
   background-color: #177290;
   outline: none;
 }
@@ -99,14 +101,15 @@ header .app__info__buttons button:hover, header .app__info__buttons button:focus
   width: 100px;
   border: 0;
   cursor: pointer;
-  border-right: 1px solid ;
+  border-right: 1px solid;
   color: white;
   background-color: gray;
   font-weight: bold;
   margin: 20px;
 }
 
-.main_body .user_action_buttons button:hover, .main_body .user_action_buttons button:focus {
+.main_body .user_action_buttons button:hover,
+.main_body .user_action_buttons button:focus {
   background-color: #5a5a5a;
   outline: none;
 }
@@ -115,7 +118,8 @@ header .app__info__buttons button:hover, header .app__info__buttons button:focus
   background-color: #2ea92e;
 }
 
-.main_body .user_action_buttons #startButton:hover, .main_body .user_action_buttons #startButton:focus {
+.main_body .user_action_buttons #startButton:hover,
+.main_body .user_action_buttons #startButton:focus {
   background-color: #1e6d1e;
   outline: none;
 }
@@ -124,7 +128,8 @@ header .app__info__buttons button:hover, header .app__info__buttons button:focus
   background-color: red;
 }
 
-.main_body .user_action_buttons #stopButton:hover, .main_body .user_action_buttons #stopButton:focus {
+.main_body .user_action_buttons #stopButton:hover,
+.main_body .user_action_buttons #stopButton:focus {
   background-color: #b30000;
   outline: none;
 }
@@ -138,14 +143,14 @@ header .app__info__buttons button:hover, header .app__info__buttons button:focus
   display: -ms-flexbox;
   display: flex;
   -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .modal-body div {

@@ -2,10 +2,10 @@
 
 //Variables
 var timerStarted = false;
-var tabStatus={
-    pomodoro:true,
-    shortBreak:false,
-    longBreak:false
+var tabStatus = {
+    pomodoro: true,
+    shortBreak: false,
+    longBreak: false
 }
 var startPomodoro = document.getElementById('startPomodoro');
 var shortBreak = document.getElementById('shortBreak');
@@ -14,9 +14,9 @@ var startButton = document.getElementById('startButton');
 var stopButton = document.getElementById('stopButton');
 var resetButton = document.getElementById('resetButton');
 var resetTimerModal = document.getElementById('resetTimerModal');
-var setPomodoroInput= document.getElementById('Reset__Pomodoro__Timer__input');
-var setShortBreakTimerInput=document.getElementById('Reset__shortBreak__Timer__input');
-var setLongBreakTimerInput= document.getElementById('Reset__longBreak__Timer__input');
+var setPomodoroInput = document.getElementById('Reset__Pomodoro__Timer__input');
+var setShortBreakTimerInput = document.getElementById('Reset__shortBreak__Timer__input');
+var setLongBreakTimerInput = document.getElementById('Reset__longBreak__Timer__input');
 var setPomodoroTimer = parseInt(setPomodoroInput.innerHTML) * 60000;
 var setShortBreakTimer = parseInt(setShortBreakTimerInput.innerHTML) * 60000;
 var setLongBreakTimer = parseInt(setLongBreakTimerInput.innerHTML) * 60000;
@@ -56,37 +56,37 @@ function setupTimer(timeElapsed, timerDuration) {
 
 // function which runs the timer when pomodoro or start button is clicked
 function pomodoroTimer() {
-    tabStatus.pomodoro=true;
-    tabStatus.shortBreak=false;
-    tabStatus.longBreak=false;
+    tabStatus.pomodoro = true;
+    tabStatus.shortBreak = false;
+    tabStatus.longBreak = false;
     setupTimer(0, setPomodoroTimer);
 }
 
 // function which resets the timer to short break
-function shortBreakTimer() {    
-    tabStatus.pomodoro=false;
-    tabStatus.shortBreak=true;
-    tabStatus.longBreak=false;
+function shortBreakTimer() {
+    tabStatus.pomodoro = false;
+    tabStatus.shortBreak = true;
+    tabStatus.longBreak = false;
     setupTimer(0, setShortBreakTimer);
 }
 
 // function which resets the timer to long break
-function longBreakTimer() {    
-    tabStatus.pomodoro=false;
-    tabStatus.shortBreak=false;
-    tabStatus.longBreak=true;
+function longBreakTimer() {
+    tabStatus.pomodoro = false;
+    tabStatus.shortBreak = false;
+    tabStatus.longBreak = true;
     setupTimer(0, setLongBreakTimer);
 }
 
 
 //function which starts of the pomodoro on click of start button
-function startTimer() {    
-    tabStatus.pomodoro=true;
-    tabStatus.shortBreak=false;
-    tabStatus.longBreak=false;
+function startTimer() {
+    tabStatus.pomodoro = true;
+    tabStatus.shortBreak = false;
+    tabStatus.longBreak = false;
     if (!timerStarted) {
         var timeArray = timeString.split(':');
-        var totalMilliseconds = ((parseInt(timeArray[0]) * 60) + (parseInt(timeArray[1]))) * 1000;        
+        var totalMilliseconds = ((parseInt(timeArray[0]) * 60) + (parseInt(timeArray[1]))) * 1000;
         setupTimer(0, totalMilliseconds);
     }
 }
@@ -103,127 +103,114 @@ function resetTimer() {
 }
 
 
-function renderResettedTimer(timerValue){
-    t.TIME_ELAPSED=0;
-    t.TIMER_DURATION=timerValue*60000;
+function renderResettedTimer(timerValue) {
+    t.TIME_ELAPSED = 0;
+    t.TIMER_DURATION = timerValue * 60000;
     t.render();
 }
 
 
 // Checking the pomodoro timer value for increment/decrement timer
-function checkPomodoroTimerValue(pomoInput) {    
-    return pomoInput >= 1  && pomoInput < 120 ? true : false;
+function checkPomodoroTimerValue(pomoInput) {
+    return pomoInput >= 1 && pomoInput < 120 ? true : false;
 }
 
 // decrement pomodoro timer value
-function decrementPomodoroTimer() {    
-    var pomoInput=parseInt(setPomodoroInput.innerHTML);
-    if (checkPomodoroTimerValue(pomoInput) && pomoInput!==1) {
+function decrementPomodoroTimer() {
+    var pomoInput = parseInt(setPomodoroInput.innerHTML);
+    if (checkPomodoroTimerValue(pomoInput) && pomoInput !== 1) {
         pomoInput--;
         setPomodoroInput.innerHTML = pomoInput;
-        setPomodoroTimer=pomoInput*60000;
-        if(tabStatus.pomodoro)
-        {
+        setPomodoroTimer = pomoInput * 60000;
+        if (tabStatus.pomodoro) {
             renderResettedTimer(pomoInput);
-        }   
-    }
-    else {
+        }
+    } else {
         alert("Pomodoro timer can't be less than 1 minute");
     }
 }
 
 // increment pomodoro timer value
 function incrementPomodoroTimer() {
-    var pomoInput=parseInt(setPomodoroInput.innerHTML);
+    var pomoInput = parseInt(setPomodoroInput.innerHTML);
     if (checkPomodoroTimerValue(pomoInput)) {
         pomoInput++;
         setPomodoroInput.innerHTML = pomoInput;
-        setPomodoroTimer=pomoInput*60000;
-        if(tabStatus.pomodoro)
-        {
+        setPomodoroTimer = pomoInput * 60000;
+        if (tabStatus.pomodoro) {
             renderResettedTimer(pomoInput);
-        } 
-    }
-    else {
+        }
+    } else {
         alert("Concentrating for more than 2 hours is tough. You should take some break as well!");
     }
 }
 
 // Checking the short break timer value for increment/decrement timer
-function checkShortBreakTimerValue(shortBreakInput) {    
-    return shortBreakInput >= 1  && shortBreakInput < 9 ? true : false;
+function checkShortBreakTimerValue(shortBreakInput) {
+    return shortBreakInput >= 1 && shortBreakInput < 9 ? true : false;
 }
 
 // decrement short break timer value
-function decrementShortBreakTimer() {    
-    var shortBreakInput=parseInt(setShortBreakTimerInput.innerHTML);
-    if (checkShortBreakTimerValue(shortBreakInput) && shortBreakInput!==1) {
+function decrementShortBreakTimer() {
+    var shortBreakInput = parseInt(setShortBreakTimerInput.innerHTML);
+    if (checkShortBreakTimerValue(shortBreakInput) && shortBreakInput !== 1) {
         shortBreakInput--;
         setShortBreakTimerInput.innerHTML = shortBreakInput;
-        setShortBreakTimer=shortBreakInput*60000;
-        if(tabStatus.shortBreak)
-        {
+        setShortBreakTimer = shortBreakInput * 60000;
+        if (tabStatus.shortBreak) {
             renderResettedTimer(shortBreakInput);
-        } 
-    }
-    else {
+        }
+    } else {
         alert("Short Break timer can't be less than 1 minute.");
     }
 }
 
 // increment short break timer value
 function incrementShortBreakTimer() {
-    var shortBreakInput=parseInt(setShortBreakTimerInput.innerHTML);
+    var shortBreakInput = parseInt(setShortBreakTimerInput.innerHTML);
     if (checkShortBreakTimerValue(shortBreakInput)) {
         shortBreakInput++;
         setShortBreakTimerInput.innerHTML = shortBreakInput;
-        setShortBreakTimer=shortBreakInput*60000;
-        if(tabStatus.shortBreak)
-        {
+        setShortBreakTimer = shortBreakInput * 60000;
+        if (tabStatus.shortBreak) {
             renderResettedTimer(shortBreakInput);
-        } 
-    }
-    else {
+        }
+    } else {
         alert("Too long for a short break isn't it? Try setting timer for long break.");
     }
 }
 
 // Checking the long break timer value for increment/decrement timer
-function checkLongBreakTimerValue(longBreakInput) {    
-    return longBreakInput >= 10  && longBreakInput < 60 ? true : false;
+function checkLongBreakTimerValue(longBreakInput) {
+    return longBreakInput >= 10 && longBreakInput < 60 ? true : false;
 }
 
 // decrement long break timer value
-function decrementLongBreakTimer() {    
-    var longBreakInput=parseInt(setLongBreakTimerInput.innerHTML);
-    if (checkLongBreakTimerValue(longBreakInput) && longBreakInput!==10) {
+function decrementLongBreakTimer() {
+    var longBreakInput = parseInt(setLongBreakTimerInput.innerHTML);
+    if (checkLongBreakTimerValue(longBreakInput) && longBreakInput !== 10) {
         longBreakInput--;
         setLongBreakTimerInput.innerHTML = longBreakInput;
-        setLongBreakTimer=longBreakInput*60000;
-        if(tabStatus.longBreak)
-        {
+        setLongBreakTimer = longBreakInput * 60000;
+        if (tabStatus.longBreak) {
             renderResettedTimer(longBreakInput);
-        } 
-    }
-    else {
+        }
+    } else {
         alert("Long Break timer can't be less than 10 minutes.");
     }
 }
 
 // increment long break timer value
 function incrementLongBreakTimer() {
-    var longBreakInput=parseInt(setLongBreakTimerInput.innerHTML);
+    var longBreakInput = parseInt(setLongBreakTimerInput.innerHTML);
     if (checkLongBreakTimerValue(longBreakInput)) {
         longBreakInput++;
         setLongBreakTimerInput.innerHTML = longBreakInput;
-        setLongBreakTimer=longBreakInput*60000;
-        if(tabStatus.longBreak)
-        {
+        setLongBreakTimer = longBreakInput * 60000;
+        if (tabStatus.longBreak) {
             renderResettedTimer(longBreakInput);
-        } 
-    }
-    else {
+        }
+    } else {
         alert("Taking a break this long will break your concentration.");
     }
 }
-

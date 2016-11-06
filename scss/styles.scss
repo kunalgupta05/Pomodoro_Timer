@@ -2,96 +2,83 @@
 @import "mixins";
 @import "https://fonts.googleapis.com/css?family=Roboto";
 @import "https://fonts.googleapis.com/css?family=Bungee+Shade";
-
-body{
+body {
     margin: 0;
     height: 100%;
 }
 
-header{
-    width:100%;
-    height:$header-height;
-    background-color:$header-bgColor;
-    @include flex(center,space-around);
-
-    #brand__title{
+header {
+    width: 100%;
+    height: $header-height;
+    background-color: $header-bgColor;
+    @include flex(center, space-around);
+    #brand__title {
         margin: 0;
-        font-size:$brand-title-size;
+        font-size: $brand-title-size;
         color: $brand-title-color;
-        font-family: 'Bungee Shade', cursive;    
+        font-family: 'Bungee Shade', cursive;
     }
-
-    .app__info__buttons{
-        display: flex;  
-        button 
-        {
-            @include buttonStyles(35px,100px,$header-buttons-color,$header-buttons-borderColor);       
-        }  
+    .app__info__buttons {
+        display: flex;
+        button {
+            @include buttonStyles(35px, 100px, $header-buttons-color, $header-buttons-borderColor);
+        }
     }
 }
 
-.main_body{
+.main_body {
     padding-top: 20px;
-    @include flex(center,center);
+    @include flex(center, center);
     flex-direction: column;
-    
-    .pomodoro_timer_buttons{
+    .pomodoro_timer_buttons {
         display: flex;
-        button{
-            @include buttonStyles(30px,250px,$timer-buttons-color,$timer-buttons-borderColor);
-            font-weight: bold;       
-        }    
-    } 
-
-    #myCanvas{
+        button {
+            @include buttonStyles(30px, 250px, $timer-buttons-color, $timer-buttons-borderColor);
+            font-weight: bold;
+        }
+    }
+    #myCanvas {
         padding-top: 20px;
     }
-
-    .user_action_buttons{
+    .user_action_buttons {
         padding-top: 20px;
-
-        button{            
-            @include buttonStyles(55px,100px,gray);
-            font-weight:bold;
-            margin: 20px;         
+        button {
+            @include buttonStyles(55px, 100px, gray);
+            font-weight: bold;
+            margin: 20px;
         }
-
-        #startButton{
-            background-color:$start-button-color;
-            &:hover,&:focus{
+        #startButton {
+            background-color: $start-button-color;
+            &:hover,
+            &:focus {
                 background-color: darken($start-button-color, 15%);
-                outline: none;       
+                outline: none;
             }
         }
-        
-        #stopButton{
+        #stopButton {
             background-color: red;
-            &:hover,&:focus{
+            &:hover,
+            &:focus {
                 background-color: darken(red, 15%);
-                outline: none;       
+                outline: none;
             }
         }
     }
 }
 
 // Modal Styles
-
-#resetTimerModal{
+#resetTimerModal {
     padding-top: 10%;
 }
 
-.modal-body{
-    @include flex(center,center);
+.modal-body {
+    @include flex(center, center);
     flex-direction: column;
-    
-    div{    
+    div {
         padding: 10px;
         font-size: 1.3em;
-        span:nth-child(2n){
+        span:nth-child(2n) {
             cursor: pointer;
         }
     }
 }
-
-
-

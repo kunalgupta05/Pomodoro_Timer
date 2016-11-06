@@ -1,9 +1,9 @@
 'use strict'
 
-var timeString="";
+var timeString = "";
 var timeElapsedAtStop;
 
-function Timer(canvas){
+function Timer(canvas) {
     // params
     this.WIDTH = 250;
     this.HEIGHT = 250;
@@ -42,7 +42,7 @@ Timer.prototype.drawTimer = function () {
         y: this.canvas.height / 2
     };
     var r = (this.canvas.width - this.TIMER_BORDER) / 2 - this.DOT_RADIUS;
-    var eAngle = (1.5 - 2.0 * this.TIME_ELAPSED / this.TIMER_DURATION) * Math.PI;    
+    var eAngle = (1.5 - 2.0 * this.TIME_ELAPSED / this.TIMER_DURATION) * Math.PI;
     var dot = {
         x: center.x + r * Math.cos(eAngle),
         y: center.y + r * Math.sin(eAngle)
@@ -79,17 +79,17 @@ Timer.prototype.render = function () {
 
 Timer.prototype.timerRun = function () {
     var self = this;
-    
-    if (self.TIME_ELAPSED >= self.TIMER_DURATION){
-        return false;
-    } 
 
-    if (!self.lastRender) {               
+    if (self.TIME_ELAPSED >= self.TIMER_DURATION) {
+        return false;
+    }
+
+    if (!self.lastRender) {
         self.lastRender = Date.now();
     }
 
 
-    var delta = Date.now() - self.lastRender;    
+    var delta = Date.now() - self.lastRender;
     // Trick to throttle FPS
     if (delta > (1000 / self.MAXFPS)) {
         self.TIME_ELAPSED += delta;
