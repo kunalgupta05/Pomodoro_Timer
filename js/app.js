@@ -150,7 +150,7 @@ function checkShortBreakTimerValue(shortBreakInput) {
     return shortBreakInput >= 1 && shortBreakInput < 9 ? true : false;
 }
 
-// decrement short break timer value
+// decrementing short break timer value
 function decrementShortBreakTimer() {
     var shortBreakInput = parseInt(setShortBreakTimerInput.innerHTML);
     if (checkShortBreakTimerValue(shortBreakInput) && shortBreakInput !== 1) {
@@ -185,7 +185,7 @@ function checkLongBreakTimerValue(longBreakInput) {
     return longBreakInput >= 10 && longBreakInput < 60 ? true : false;
 }
 
-// decrement long break timer value
+// decrement long break timer value 
 function decrementLongBreakTimer() {
     var longBreakInput = parseInt(setLongBreakTimerInput.innerHTML);
     if (checkLongBreakTimerValue(longBreakInput) && longBreakInput !== 10) {
