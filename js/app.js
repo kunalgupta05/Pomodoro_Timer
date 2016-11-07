@@ -81,9 +81,6 @@ function longBreakTimer() {
 
 //function which starts of the pomodoro on click of start button
 function startTimer() {
-    tabStatus.pomodoro = true;
-    tabStatus.shortBreak = false;
-    tabStatus.longBreak = false;
     if (!timerStarted) {
         var timeArray = timeString.split(':');
         var totalMilliseconds = ((parseInt(timeArray[0]) * 60) + (parseInt(timeArray[1]))) * 1000;
@@ -94,11 +91,12 @@ function startTimer() {
 //function which will stop the timer as soon as user clicks on the stop button
 function stopTimer() {
     t.TIME_ELAPSED = t.TIMER_DURATION;
-    timerStarted = false;
+    timerStarted = false;    
 }
 
 // function which will open the modal, which will eventually reset the timers according to user's preference
 function resetTimer() {
+    stopTimer();
     $('#resetTimerModal').modal('show');
 }
 
