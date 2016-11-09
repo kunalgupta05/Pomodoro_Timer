@@ -178,7 +178,7 @@ function incrementShortBreakTimer() {
     }
 }
 
-// Checking the long break timer value for increment/decrement timer
+// Checking the long break timer value for incrementing/decrementing timer
 function checkLongBreakTimerValue(longBreakInput) {
     return longBreakInput >= 10 && longBreakInput < 60 ? true : false;
 }
