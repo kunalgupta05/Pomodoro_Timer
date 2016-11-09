@@ -46,6 +46,7 @@ header {
             @include buttonStyles(55px, 100px, gray);
             font-weight: bold;
             margin: 20px;
+            border-radius: 5px;    
         }
         #startButton {
             background-color: $start-button-color;
