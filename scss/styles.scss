@@ -64,26 +64,7 @@ header {
                 outline: none;
             }
         }
-    }
-    .shortcuts_notifications_container{
-        display: flex;
-        justify-content: space-around;        
-        .keyboard_shortcuts{            
-            background-color: $shortcut-notifications-container-color;
-            height: $shortcut-notifications-container-height;
-            width: $shortcut-notifications-container-width;
-            margin:20px;
-            padding: 10px;            
-        }
-        
-        .desktop_notifications{            
-            background-color: $shortcut-notifications-container-color;
-            height: $shortcut-notifications-container-height;
-            width: $shortcut-notifications-container-width;
-            margin: 20px;
-            padding: 10px;
-        }
-    }
+    }    
 }
 
 // Modal Styles

@@ -130,31 +130,6 @@ header .app__info__buttons button:hover, header .app__info__buttons button:focus
   outline: none;
 }
 
-.main_body .shortcuts_notifications_container {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: space-around;
-      -ms-flex-pack: distribute;
-          justify-content: space-around;
-}
-
-.main_body .shortcuts_notifications_container .keyboard_shortcuts {
-  background-color: #eee;
-  height: 200px;
-  width: 400px;
-  margin: 20px;
-  padding: 10px;
-}
-
-.main_body .shortcuts_notifications_container .desktop_notifications {
-  background-color: #eee;
-  height: 200px;
-  width: 400px;
-  margin: 20px;
-  padding: 10px;
-}
-
 #resetTimerModal {
   padding-top: 10%;
 }
