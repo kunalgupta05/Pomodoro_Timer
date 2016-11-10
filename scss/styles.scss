@@ -67,6 +67,27 @@ header {
     }    
 }
 
+.shortcuts_notifications_container{
+    @include flex(center,space-around);
+    padding-top: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    .keyboard_shortcuts{
+        @include shortcutNotificationsContainerStyles();
+        #keyboard__shortcuts__heading{
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    }
+    .desktop_notifications{
+        @include shortcutNotificationsContainerStyles();
+        #desktop__notifications__heading{
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    }
+}
+
 // Modal Styles
 #resetTimerModal {
     padding-top: 10%;

@@ -17,3 +17,10 @@
         outline: none;       
     }
 }
+
+@mixin shortcutNotificationsContainerStyles(){
+        height: $shortcuts-notifications-container-height;
+        width: $shortcuts-notifications-container-width;
+        background-color:$shortcuts-notifications-container-color;
+        padding: 8px;
+}
