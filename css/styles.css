@@ -147,7 +147,7 @@ header .app__info__buttons button:hover, header .app__info__buttons button:focus
 
 .shortcuts_notifications_container .keyboard_shortcuts {
   height: 200px;
-  width: 400px;
+  width: 380px;
   background-color: #eee;
   padding: 8px;
 }
@@ -157,9 +157,17 @@ header .app__info__buttons button:hover, header .app__info__buttons button:focus
   font-weight: bold;
 }
 
+.shortcuts_notifications_container .keyboard_shortcuts .shortcuts-list {
+  padding: 15px;
+}
+
+.shortcuts_notifications_container .keyboard_shortcuts .shortcuts-list ul {
+  padding: 5px;
+}
+
 .shortcuts_notifications_container .desktop_notifications {
   height: 200px;
-  width: 400px;
+  width: 380px;
   background-color: #eee;
   padding: 8px;
 }
@@ -167,6 +175,20 @@ header .app__info__buttons button:hover, header .app__info__buttons button:focus
 .shortcuts_notifications_container .desktop_notifications #desktop__notifications__heading {
   font-size: 1.2em;
   font-weight: bold;
+}
+
+.shortcuts_notifications_container .desktop_notifications .notifications__content {
+  padding: 10px;
+}
+
+.shortcuts_notifications_container .desktop_notifications .notifications__content div {
+  padding: 5px;
+}
+
+.shortcuts_notifications_container .desktop_notifications .notifications__content button {
+  margin-top: 10px;
+  background-color: #22a6d2;
+  color: white;
 }
 
 #resetTimerModal {

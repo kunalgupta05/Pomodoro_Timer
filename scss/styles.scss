@@ -78,12 +78,29 @@ header {
             font-size: 1.2em;
             font-weight: bold;
         }
+        .shortcuts-list{
+            padding: 15px;
+            ul{
+                padding: 5px;
+            }
+        }
     }
     .desktop_notifications{
         @include shortcutNotificationsContainerStyles();
         #desktop__notifications__heading{
             font-size: 1.2em;
             font-weight: bold;
+        }
+        .notifications__content{
+            padding: 10px;
+            div{
+                padding: 5px;
+            }
+            button{
+                margin-top: 10px;
+                background-color: $enable-desktop-button-color;
+                color: white;
+            }
         }
     }
 }
