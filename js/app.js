@@ -14,7 +14,6 @@ var longBreak = document.getElementById('longBreak');
 var startButton = document.getElementById('startButton');
 var stopButton = document.getElementById('stopButton');
 var resetButton = document.getElementById('resetButton');
-var resetTimerModal = document.getElementById('resetTimerModal');
 var setPomodoroInput = document.getElementById('Reset__Pomodoro__Timer__input');
 var setShortBreakTimerInput = document.getElementById('Reset__shortBreak__Timer__input');
 var setLongBreakTimerInput = document.getElementById('Reset__longBreak__Timer__input');
@@ -27,10 +26,11 @@ var decrementShortBreak = document.getElementById('Reset__shortBreak__Timer__dec
 var incrementShortBreak = document.getElementById('Reset__shortBreak__Timer__increment');
 var decrementLongBreak = document.getElementById('Reset__longBreak__Timer__decrement');
 var incrementLongBreak = document.getElementById('Reset__longBreak__Timer__increment');
-
+var aboutButton=document.getElementById('aboutButton');
 
 
 // EventListeners
+document.addEventListener('keyup',keyboardInputHandler,false);
 startPomodoro.addEventListener('click', pomodoroTimer, false);
 shortBreak.addEventListener('click', shortBreakTimer, false);
 longBreak.addEventListener('click', longBreakTimer, false);
@@ -43,7 +43,8 @@ decrementShortBreak.addEventListener('click', decrementShortBreakTimer, false);
 incrementShortBreak.addEventListener('click', incrementShortBreakTimer, false);
 decrementLongBreak.addEventListener('click', decrementLongBreakTimer, false);
 incrementLongBreak.addEventListener('click', incrementLongBreakTimer, false);
-document.addEventListener('keyup',keyboardInputHandler,false);
+aboutButton.addEventListener('click',showAppInfo,false);
+
 
 function keyboardInputHandler(event){
     console.log(event.which);
@@ -70,8 +71,7 @@ function keyboardInputHandler(event){
     }
     if(event.which===82){
         resetTimer();
-    }
-    
+    }   
 }
 
 
@@ -127,13 +127,7 @@ function stopTimer() {
     spacebarPressedCount=0;
 }
 
-// function which will open the modal, which will eventually reset the timers according to user's preference
-function resetTimer() {
-    stopTimer();
-    $('#resetTimerModal').modal('show');
-}
-
-
+// Render the new timer after resetting the original timer values
 function renderResettedTimer(timerValue) {
     t.TIME_ELAPSED = 0;
     t.TIMER_DURATION = timerValue * 60000;
@@ -244,4 +238,15 @@ function incrementLongBreakTimer() {
     } else {
         alert("Taking a break this long will break your concentration.");
     }
+}
+
+// function which will open the modal, which will eventually reset the timers according to user's preference
+function resetTimer() {
+    stopTimer();
+    $('#resetTimerModal').modal('show');
+}
+
+function showAppInfo(){
+    stopTimer();
+    $('#aboutInfoModal').modal('show');   
 }

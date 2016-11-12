@@ -108,16 +108,17 @@ header {
 // Modal Styles
 #resetTimerModal {
     padding-top: 10%;
-}
-
-.modal-body {
-    @include flex(center, center);
-    flex-direction: column;
-    div {
-        padding: 10px;
-        font-size: 1.3em;
-        span:nth-child(2n) {
-            cursor: pointer;
+    
+    .modal-body {
+        @include flex(center, center);
+        flex-direction: column;
+        div {
+            padding: 10px;
+            font-size: 1.3em;
+            span:nth-child(2n) {
+                cursor: pointer;
+            }
         }
     }
 }
+

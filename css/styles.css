@@ -195,7 +195,7 @@ header .app__info__buttons button:hover, header .app__info__buttons button:focus
   padding-top: 10%;
 }
 
-.modal-body {
+#resetTimerModal .modal-body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -210,11 +210,11 @@ header .app__info__buttons button:hover, header .app__info__buttons button:focus
           flex-direction: column;
 }
 
-.modal-body div {
+#resetTimerModal .modal-body div {
   padding: 10px;
   font-size: 1.3em;
 }
 
-.modal-body div span:nth-child(2n) {
+#resetTimerModal .modal-body div span:nth-child(2n) {
   cursor: pointer;
 }
