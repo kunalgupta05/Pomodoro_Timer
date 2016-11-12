@@ -6,7 +6,8 @@ var tabStatus = {
     pomodoro: true,
     shortBreak: false,
     longBreak: false
-}
+};
+var spacebarPressedCount=0;
 var startPomodoro = document.getElementById('startPomodoro');
 var shortBreak = document.getElementById('shortBreak');
 var longBreak = document.getElementById('longBreak');
@@ -42,15 +43,46 @@ decrementShortBreak.addEventListener('click', decrementShortBreakTimer, false);
 incrementShortBreak.addEventListener('click', incrementShortBreakTimer, false);
 decrementLongBreak.addEventListener('click', decrementLongBreakTimer, false);
 incrementLongBreak.addEventListener('click', incrementLongBreakTimer, false);
+document.addEventListener('keyup',keyboardInputHandler,false);
+
+function keyboardInputHandler(event){
+    console.log(event.which);
+    if(event.which===32){
+        if(!spacebarPressedCount){
+            //spacebarPressedCount=1;
+            console.log('start');
+            startTimer();            
+        }
+        else{
+            //spacebarPressedCount=0;\
+            console.log('stop');
+            stopTimer();
+        }
+    }    
+    if(event.which===80){
+        pomodoroTimer();
+    }
+    if(event.which===83){
+        shortBreakTimer();
+    }
+    if(event.which===76){
+        longBreakTimer();
+    }
+    if(event.which===82){
+        resetTimer();
+    }
+    
+}
 
 
 // Common utility function which sets the timer according to timings set by the user
 function setupTimer(timeElapsed, timerDuration) {
     timerStarted = true;
+    spacebarPressedCount=1;
     t.TIME_ELAPSED = timeElapsed;
     t.TIMER_DURATION = timerDuration;
     t.lastRender = Date.now();
-    t.timerRun();
+    t.timerRun();    
 }
 
 
@@ -91,7 +123,8 @@ function startTimer() {
 //function which will stop the timer as soon as user clicks on the stop button
 function stopTimer() {
     t.TIME_ELAPSED = t.TIMER_DURATION;
-    timerStarted = false;    
+    timerStarted = false;
+    spacebarPressedCount=0;
 }
 
 // function which will open the modal, which will eventually reset the timers according to user's preference
