@@ -222,3 +222,7 @@ header .app__info__buttons button:hover, header .app__info__buttons button:focus
 #settingsModal .modal-body select {
   width: 100%;
 }
+
+#disclaimerModal {
+  padding-top: 10%;
+}

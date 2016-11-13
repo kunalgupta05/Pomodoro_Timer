@@ -17,7 +17,7 @@
 		<div class="app__info__buttons">
 			<button type="button" id="aboutButton">About</button>
 			<button type="button" id="settingsButton">Settings</button>
-			<button type="button">Disclaimer</button>
+			<button type="button" id="disclaimerButton">Disclaimer</button>
 		</div>
 	</header>
 	<div class="main_body">
@@ -164,6 +164,27 @@
 						<button id="submitSettings" class="btn">Submit</button>
 						<button id="resetSettings" class="btn">Reset</button>
 					</div>
+				</div>
+				<div class="modal-footer">
+					<div class="text-center">No copyright &copy. Feel free to use.</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Modal for displaying the Disclaimer-->
+	<div class="modal fade" id="disclaimerModal" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="btn close btn-lg" data-dismiss="modal">&times;</button>
+					<h3 class="modal-title text-center">DISCLAIMER</h3>
+				</div>
+				<div class="modal-body">
+					<b>This app is completely inspired by this <a href="https://tomato-timer.com/">timer-app</a>. I have 
+					no intention of hosting it and landing myself with copyright issues. This is strictly for personal use as I 
+					found the design of the app very clean and easy to use. I have improved upon few things from the original app as in
+					using canvas for the timer for more interactive experience, as well as adding the functionality for resetting the timer values as per 
+					user's need.</b>
 				</div>
 				<div class="modal-footer">
 					<div class="text-center">No copyright &copy. Feel free to use.</div>

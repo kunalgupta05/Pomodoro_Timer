@@ -28,6 +28,7 @@ var decrementLongBreak = document.getElementById('Reset__longBreak__Timer__decre
 var incrementLongBreak = document.getElementById('Reset__longBreak__Timer__increment');
 var aboutButton=document.getElementById('aboutButton');
 var settingsButton=document.getElementById('settingsButton');
+var disclaimerButton=document.getElementById('disclaimerButton');
 
 
 // EventListeners
@@ -46,6 +47,7 @@ decrementLongBreak.addEventListener('click', decrementLongBreakTimer, false);
 incrementLongBreak.addEventListener('click', incrementLongBreakTimer, false);
 aboutButton.addEventListener('click',showAppInfo,false);
 settingsButton.addEventListener('click',showSettings,false);
+disclaimerButton.addEventListener('click',showDisclaimer,false);
 
 
 function keyboardInputHandler(event){
@@ -256,4 +258,9 @@ function showAppInfo(){
 function showSettings(){
     stopTimer();
     $('#settingsModal').modal('show');
+}
+
+function showDisclaimer(){
+    stopTimer();
+    $('#disclaimerModal').modal('show');
 }
