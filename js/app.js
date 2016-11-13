@@ -27,6 +27,7 @@ var incrementShortBreak = document.getElementById('Reset__shortBreak__Timer__inc
 var decrementLongBreak = document.getElementById('Reset__longBreak__Timer__decrement');
 var incrementLongBreak = document.getElementById('Reset__longBreak__Timer__increment');
 var aboutButton=document.getElementById('aboutButton');
+var settingsButton=document.getElementById('settingsButton');
 
 
 // EventListeners
@@ -44,6 +45,7 @@ incrementShortBreak.addEventListener('click', incrementShortBreakTimer, false);
 decrementLongBreak.addEventListener('click', decrementLongBreakTimer, false);
 incrementLongBreak.addEventListener('click', incrementLongBreakTimer, false);
 aboutButton.addEventListener('click',showAppInfo,false);
+settingsButton.addEventListener('click',showSettings,false);
 
 
 function keyboardInputHandler(event){
@@ -249,4 +251,9 @@ function resetTimer() {
 function showAppInfo(){
     stopTimer();
     $('#aboutInfoModal').modal('show');   
+}
+
+function showSettings(){
+    stopTimer();
+    $('#settingsModal').modal('show');
 }

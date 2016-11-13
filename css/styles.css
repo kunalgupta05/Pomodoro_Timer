@@ -218,3 +218,7 @@ header .app__info__buttons button:hover, header .app__info__buttons button:focus
 #resetTimerModal .modal-body div span:nth-child(2n) {
   cursor: pointer;
 }
+
+#settingsModal .modal-body select {
+  width: 100%;
+}

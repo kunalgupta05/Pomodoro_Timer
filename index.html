@@ -16,7 +16,7 @@
 		</div>
 		<div class="app__info__buttons">
 			<button type="button" id="aboutButton">About</button>
-			<button type="button">Settings</button>
+			<button type="button" id="settingsButton">Settings</button>
 			<button type="button">Disclaimer</button>
 		</div>
 	</header>
@@ -40,7 +40,7 @@
 			<div id="keyboard__shortcuts__heading">Keyboard Shortcuts</div>
 			<div class="shortcuts-list">
 				<ul>
-					<li>SPACE   Start or Stop the timer</li>
+					<li>SPACE Start or Stop the timer</li>
 					<li>P - Pomodoro</li>
 					<li>S - Short Break</li>
 					<li>L - Long Break</li>
@@ -59,7 +59,6 @@
 			</div>
 		</div>
 	</div>
-
 	<!-- Modals -->
 	<!--Modal for resetting timers-->
 	<div class="modal fade medium" id="resetTimerModal" role="dialog">
@@ -95,20 +94,19 @@
 			</div>
 		</div>
 	</div>
-	
 	<!--Modal for displaying info about the app-->
 	<div class="modal fade" id="aboutInfoModal" role="dialog">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">					
+				<div class="modal-header">
 					<button type="button" class="btn close btn-lg" data-dismiss="modal">&times;</button>
 					<h3 class="modal-title text-center">ABOUT</h3>
 				</div>
 				<div class="modal-body">
 					<div>Q What is Pomodoro Technique?</div>
 					<div>
-						A. The time management technique created by Francesco Cirillo for a more productive way to work and study. 
-						For more information, <a href="http://www.pomodorotechnique.com" target="_blank">click here</a>
+						A. The time management technique created by Francesco Cirillo for a more productive way to work and study. For more information,
+						<a href="http://www.pomodorotechnique.com" target="_blank">click here</a>
 					</div>
 					<br>
 					<div>Q. Can you tell me the story without having to visit the website?</div>
@@ -125,8 +123,46 @@
 					<br>
 					<div>Q What is this app about?</div>
 					<div>
-						A. It's an easy to use, flexible Pomodoro Technique timer. It is completely similar to this <a href="https://tomato-timer.com/">app</a>. 
+						A. It's an easy to use, flexible Pomodoro Technique timer. It is completely similar to this <a href="https://tomato-timer.com/">app</a>.
 						It uses vanilla JS, JQuery and Bootstrap for handling modals, and SCSS for adding styles.
+					</div>
+				</div>
+				<div class="modal-footer">
+					<div class="text-center">No copyright &copy. Feel free to use.</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal for changing alarm/volume settings-->
+	<div class="modal fade" id="settingsModal" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="btn close btn-lg" data-dismiss="modal">&times;</button>
+					<h3 class="modal-title text-center">Settings</h3>
+				</div>
+				<div class="modal-body">
+					<h3>Select Sound</h3>
+					<select id="alarmSound" size="5">
+        				<option value="80sAlarm">80s Alarm</option>
+        				<option value="alarmclock" selected>Alarm Clock</option>
+        				<option value="alarmwatch">Wristwatch Alarm</option>
+        				<option value="ding">Elevator Ding</option>
+        				<option value="doorbell">Door Bell</option>
+    				</select>
+					<br>
+					<h3>Select Volume</h3>
+					<select id="volume" size=5>
+        				<option value="0">Mute</option>
+        				<option value="0.25">25%</option>
+        				<option value="0.5" selected>50%</option>
+        				<option value="0.75">75%</option>
+        				<option value="1.0">100%</option>
+    				</select>
+					<div class="text-center">
+						<br>				
+						<button id="submitSettings" class="btn">Submit</button>
+						<button id="resetSettings" class="btn">Reset</button>
 					</div>
 				</div>
 				<div class="modal-footer">
