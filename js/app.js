@@ -82,8 +82,8 @@ function keyboardInputHandler(event){
 // Common utility function which sets the timer according to timings set by the user
 function setupTimer(timeElapsed, timerDuration) {
     timerStarted = true;
-    spacebarPressedCount=1;
-    t.TIME_ELAPSED = timeElapsed;
+    spacebarPressedCount=1;    
+    t.TIME_ELAPSED = timeElapsed;    
     t.TIMER_DURATION = timerDuration;
     t.lastRender = Date.now();
     t.timerRun();    
@@ -250,16 +250,19 @@ function resetTimer() {
     $('#resetTimerModal').modal('show');
 }
 
+// function which will open the about modal
 function showAppInfo(){
     stopTimer();
     $('#aboutInfoModal').modal('show');   
 }
 
+// function which will open the sound settings modal
 function showSettings(){
     stopTimer();
     $('#settingsModal').modal('show');
 }
 
+// function which will open the disclaimer Modal
 function showDisclaimer(){
     stopTimer();
     $('#disclaimerModal').modal('show');
