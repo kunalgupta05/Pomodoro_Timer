@@ -1,13 +1,6 @@
 'use strict'
 
 //Variables
-var timerStarted = false;
-var tabStatus = {
-    pomodoro: true,
-    shortBreak: false,
-    longBreak: false
-};
-var spacebarPressedCount=0;
 var startPomodoro = document.getElementById('startPomodoro');
 var shortBreak = document.getElementById('shortBreak');
 var longBreak = document.getElementById('longBreak');
@@ -51,16 +44,11 @@ disclaimerButton.addEventListener('click',showDisclaimer,false);
 
 
 function keyboardInputHandler(event){
-    console.log(event.which);
     if(event.which===32){
         if(!spacebarPressedCount){
-            //spacebarPressedCount=1;
-            console.log('start');
             startTimer();            
         }
         else{
-            //spacebarPressedCount=0;\
-            console.log('stop');
             stopTimer();
         }
     }    

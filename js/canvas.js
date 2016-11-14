@@ -1,8 +1,5 @@
 'use strict'
 
-var timeString = "";
-var timeElapsedAtStop;
-
 function Timer(canvas) {
     // params
     this.WIDTH = 250;
@@ -20,8 +17,16 @@ function Timer(canvas) {
     this.ctx = canvas.getContext('2d');
 }
 
+// function which takes the timerstring as argument and checks whether pomodoro timer is zero as well keeping track of the pomodoro count
+function checkPomodoroCount(ts){
+    if(!ts && timerStarted && tabStatus.pomodoro){
+        shortBreakTimer();
+    }
+}
+
 Timer.prototype.timerString = function () {
     var ts = Math.ceil((this.TIMER_DURATION - this.TIME_ELAPSED) / 1000);
+    checkPomodoroCount(ts);
     var h = parseInt(ts / 3600) % 24;
     var m = parseInt(ts / 60) % 60;
     var s = ts % 60;
@@ -87,7 +92,6 @@ Timer.prototype.timerRun = function () {
     if (!self.lastRender) {
         self.lastRender = Date.now();
     }
-
 
     var delta = Date.now() - self.lastRender;
     // Trick to throttle FPS
