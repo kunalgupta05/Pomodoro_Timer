@@ -19,20 +19,18 @@ function Timer(canvas) {
 
 // function which takes the timerstring as argument and checks whether pomodoro timer is zero as well keeping track of the pomodoro count
 function checkPomodoroCount(ts){
-    if(!ts && timerStarted && tabStatus.pomodoro){        
-        pomodoroCount++;
+    if(!ts && timerStarted && tabStatus.pomodoro){                
         if(pomodoroCount===4){
             pomodoroCount=0;
-            console.log('Long break started!');
             longBreakTimer();
         }
         else{
+            pomodoroCount++;
             shortBreakTimer();
         }        
         return true;
     }         
-    if(!ts && timerStarted && tabStatus.shortBreak && (pomodoroCount || tabStatus.longBreak)){
-        console.log('New pomodoro started!');
+    if(!ts && timerStarted && ((tabStatus.shortBreak && pomodoroCount) || tabStatus.longBreak)){
         pomodoroTimer();
         return true;
     }    
