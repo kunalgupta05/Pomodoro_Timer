@@ -22,16 +22,16 @@ function checkPomodoroCount(ts){
     if(!ts && timerStarted && tabStatus.pomodoro){                
         if(pomodoroCount===4){
             pomodoroCount=0;
-            longBreakTimer();
+            longBreakTimer("true");
         }
         else{
             pomodoroCount++;
-            shortBreakTimer();
+            shortBreakTimer("true");
         }        
         return true;
     }         
     if(!ts && timerStarted && ((tabStatus.shortBreak && pomodoroCount) || tabStatus.longBreak)){
-        pomodoroTimer();
+        pomodoroTimer("true");
         return true;
     }    
 }

@@ -80,6 +80,10 @@ function setupTimer(timeElapsed, timerDuration) {
 
 // function which runs the timer when pomodoro or start button is clicked
 function pomodoroTimer() {
+    if(!arguments[0]){
+        console.log('Reset');
+        pomodoroCount=0;
+    }
     tabStatus.pomodoro = true;
     tabStatus.shortBreak = false;
     tabStatus.longBreak = false;
@@ -88,6 +92,10 @@ function pomodoroTimer() {
 
 // function which resets the timer to short break
 function shortBreakTimer() {
+    if(!arguments[0]){
+        console.log('Reset');
+        pomodoroCount=0;
+    }
     tabStatus.pomodoro = false;
     tabStatus.shortBreak = true;
     tabStatus.longBreak = false;
@@ -96,6 +104,10 @@ function shortBreakTimer() {
 
 // function which resets the timer to long break
 function longBreakTimer() {
+    if(!arguments[0]){
+        console.log('Reset');
+        pomodoroCount=0;
+    }
     tabStatus.pomodoro = false;
     tabStatus.shortBreak = false;
     tabStatus.longBreak = true;
