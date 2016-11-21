@@ -1,45 +1,46 @@
 'use strict'
 
-function keyboardInputHandler(event){
-    if(event.which===32){
-        if(!spacebarPressedCount){
-            startTimer();            
-        }
-        else{
+function keyboardInputHandler(event) {
+    if (event.which === 32) {
+        if (!spacebarPressedCount) {
+            startTimer();
+        } else {
             stopTimer();
         }
-    }    
-    if(event.which===80){
-        pomodoroTimer();
     }
-    if(event.which===83){
-        shortBreakTimer();
+    if (event.altKey) {
+        if (event.which === 80) {
+            pomodoroTimer();
+        }
+        if (event.which === 83) {
+            shortBreakTimer();
+        }
+        if (event.which === 76) {
+            longBreakTimer();
+        }
+        if (event.which === 82) {
+            resetTimer();
+        }
     }
-    if(event.which===76){
-        longBreakTimer();
-    }
-    if(event.which===82){
-        resetTimer();
-    }   
 }
 
 
 // Common utility function which sets the timer according to timings set by the user
 function setupTimer(timeElapsed, timerDuration) {
     timerStarted = true;
-    spacebarPressedCount=1;    
-    t.TIME_ELAPSED = timeElapsed;    
+    spacebarPressedCount = 1;
+    t.TIME_ELAPSED = timeElapsed;
     t.TIMER_DURATION = timerDuration;
     t.lastRender = Date.now();
-    t.timerRun();    
+    t.timerRun();
 }
 
 
 // function which runs the timer when pomodoro or start button is clicked
 function pomodoroTimer() {
-    if(!arguments[0]){
+    if (!arguments[0]) {
         console.log('Reset');
-        pomodoroCount=0;
+        pomodoroCount = 0;
     }
     tabStatus.pomodoro = true;
     tabStatus.shortBreak = false;
@@ -49,9 +50,9 @@ function pomodoroTimer() {
 
 // function which resets the timer to short break
 function shortBreakTimer() {
-    if(!arguments[0]){
+    if (!arguments[0]) {
         console.log('Reset');
-        pomodoroCount=0;
+        pomodoroCount = 0;
     }
     tabStatus.pomodoro = false;
     tabStatus.shortBreak = true;
@@ -61,9 +62,9 @@ function shortBreakTimer() {
 
 // function which resets the timer to long break
 function longBreakTimer() {
-    if(!arguments[0]){
+    if (!arguments[0]) {
         console.log('Reset');
-        pomodoroCount=0;
+        pomodoroCount = 0;
     }
     tabStatus.pomodoro = false;
     tabStatus.shortBreak = false;
@@ -85,7 +86,7 @@ function startTimer() {
 function stopTimer() {
     t.TIME_ELAPSED = t.TIMER_DURATION;
     timerStarted = false;
-    spacebarPressedCount=0;
+    spacebarPressedCount = 0;
 }
 
 // Render the new timer after resetting the original timer values
@@ -208,26 +209,26 @@ function resetTimer() {
 }
 
 // function which will open the about modal
-function showAppInfo(){
+function showAppInfo() {
     stopTimer();
-    $('#aboutInfoModal').modal('show');   
+    $('#aboutInfoModal').modal('show');
 }
 
 // function which will open the sound settings modal
-function showSettings(){
+function showSettings() {
     stopTimer();
     $('#settingsModal').modal('show');
 }
 
 // function which will open the disclaimer Modal
-function showDisclaimer(){
+function showDisclaimer() {
     stopTimer();
     $('#disclaimerModal').modal('show');
 }
 
 // function which asks for permission to enable desktop notifications
-function notifyPermission(){
-    if (Notification.permission !== "granted"){
+function notifyPermission() {
+    if (Notification.permission !== "granted") {
         Notification.requestPermission();
     }
 }

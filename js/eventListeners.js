@@ -1,7 +1,7 @@
 // EventListeners added to selected DOM elements for triggering
 
 document.addEventListener('DOMContentLoaded',notifyPermission,false);
-document.addEventListener('keyup',keyboardInputHandler,false);
+document.addEventListener('keydown',keyboardInputHandler,false);
 startPomodoro.addEventListener('click', pomodoroTimer, false);
 shortBreak.addEventListener('click', shortBreakTimer, false);
 longBreak.addEventListener('click', longBreakTimer, false);
