@@ -224,3 +224,10 @@ function showDisclaimer(){
     stopTimer();
     $('#disclaimerModal').modal('show');
 }
+
+// function which asks for permission to enable desktop notifications
+function notifyPermission(){
+    if (Notification.permission !== "granted"){
+        Notification.requestPermission();
+    }
+}

@@ -21,3 +21,4 @@ var incrementLongBreak = document.getElementById('Reset__longBreak__Timer__incre
 var aboutButton=document.getElementById('aboutButton');
 var settingsButton=document.getElementById('settingsButton');
 var disclaimerButton=document.getElementById('disclaimerButton');
+var enableNotifications=document.getElementById('enableNotifications');

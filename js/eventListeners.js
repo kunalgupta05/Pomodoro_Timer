@@ -1,5 +1,6 @@
 // EventListeners added to selected DOM elements for triggering
 
+document.addEventListener('DOMContentLoaded',notifyPermission,false);
 document.addEventListener('keyup',keyboardInputHandler,false);
 startPomodoro.addEventListener('click', pomodoroTimer, false);
 shortBreak.addEventListener('click', shortBreakTimer, false);
@@ -16,3 +17,4 @@ incrementLongBreak.addEventListener('click', incrementLongBreakTimer, false);
 aboutButton.addEventListener('click',showAppInfo,false);
 settingsButton.addEventListener('click',showSettings,false);
 disclaimerButton.addEventListener('click',showDisclaimer,false);
+enableNotifications.addEventListener('click',notifyPermission,false);

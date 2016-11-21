@@ -17,20 +17,41 @@ function Timer(canvas) {
     this.ctx = canvas.getContext('2d');
 }
 
+// function which notifies the user regarding the completion of pomodoros,shortBreaks,and longbreaks
+function desktopAlert(message){
+    if(!Notification){
+        alert('Desktop notifications not available in your browser. Try Chrome, Firefox or Safari.');
+        return;
+    }
+    if(Notification.permission === "granted"){
+        var notification = new Notification('Pomodoro Timer', {
+            icon: 'https://www.svgimages.com/svg-image/s4/tomato-clipart.svg',
+            body: message,
+        });
+        setTimeout(notification.close.bind(notification), 6000);
+        notification.onclick = function () {
+            window.focus();
+        };
+    }
+}
+
 // function which takes the timerstring as argument and checks whether pomodoro timer is zero as well keeping track of the pomodoro count
 function checkPomodoroCount(ts){
     if(!ts && timerStarted && tabStatus.pomodoro){                
         if(pomodoroCount===4){
             pomodoroCount=0;
+            desktopAlert("You have been at it for a long time now, you deserve a longer break.");
             longBreakTimer("true");
         }
-        else{
+        else{            
             pomodoroCount++;
+            desktopAlert("Good concentration, now relax and take a short break before resuming.");
             shortBreakTimer("true");
         }        
         return true;
     }         
     if(!ts && timerStarted && ((tabStatus.shortBreak && pomodoroCount) || tabStatus.longBreak)){
+        desktopAlert("Stop procrastinating, time to concentrate again.");
         pomodoroTimer("true");
         return true;
     }    
