@@ -25,7 +25,7 @@ function desktopAlert(message){
     }
     if(Notification.permission === "granted"){
         var notification = new Notification('Pomodoro Timer', {
-            icon: 'https://www.svgimages.com/svg-image/s4/tomato-clipart.svg',
+            icon: 'http://static.wixstatic.com/media/ab62b7_aa207dafbdd24870884e02274a9e8723~mv2_d_1271_1449_s_2.png/v1/fill/w_108,h_125,al_c,usm_0.66_1.00_0.01/ab62b7_aa207dafbdd24870884e02274a9e8723~mv2_d_1271_1449_s_2.png',
             body: message,
         });
         setTimeout(notification.close.bind(notification), 6000);
