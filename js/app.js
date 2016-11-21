@@ -1,48 +1,5 @@
 'use strict'
 
-//Variables
-var startPomodoro = document.getElementById('startPomodoro');
-var shortBreak = document.getElementById('shortBreak');
-var longBreak = document.getElementById('longBreak');
-var startButton = document.getElementById('startButton');
-var stopButton = document.getElementById('stopButton');
-var resetButton = document.getElementById('resetButton');
-var setPomodoroInput = document.getElementById('Reset__Pomodoro__Timer__input');
-var setShortBreakTimerInput = document.getElementById('Reset__shortBreak__Timer__input');
-var setLongBreakTimerInput = document.getElementById('Reset__longBreak__Timer__input');
-var setPomodoroTimer = parseInt(setPomodoroInput.innerHTML) * 60000;
-var setShortBreakTimer = parseInt(setShortBreakTimerInput.innerHTML) * 60000;
-var setLongBreakTimer = parseInt(setLongBreakTimerInput.innerHTML) * 60000;
-var decrementPomodoro = document.getElementById('Reset__Pomodoro__Timer__decrement');
-var incrementPomodoro = document.getElementById('Reset__Pomodoro__Timer__increment');
-var decrementShortBreak = document.getElementById('Reset__shortBreak__Timer__decrement');
-var incrementShortBreak = document.getElementById('Reset__shortBreak__Timer__increment');
-var decrementLongBreak = document.getElementById('Reset__longBreak__Timer__decrement');
-var incrementLongBreak = document.getElementById('Reset__longBreak__Timer__increment');
-var aboutButton=document.getElementById('aboutButton');
-var settingsButton=document.getElementById('settingsButton');
-var disclaimerButton=document.getElementById('disclaimerButton');
-
-
-// EventListeners
-document.addEventListener('keyup',keyboardInputHandler,false);
-startPomodoro.addEventListener('click', pomodoroTimer, false);
-shortBreak.addEventListener('click', shortBreakTimer, false);
-longBreak.addEventListener('click', longBreakTimer, false);
-startButton.addEventListener('click', startTimer, false);
-stopButton.addEventListener('click', stopTimer, false);
-resetButton.addEventListener('click', resetTimer, false);
-decrementPomodoro.addEventListener('click', decrementPomodoroTimer, false);
-incrementPomodoro.addEventListener('click', incrementPomodoroTimer, false);
-decrementShortBreak.addEventListener('click', decrementShortBreakTimer, false);
-incrementShortBreak.addEventListener('click', incrementShortBreakTimer, false);
-decrementLongBreak.addEventListener('click', decrementLongBreakTimer, false);
-incrementLongBreak.addEventListener('click', incrementLongBreakTimer, false);
-aboutButton.addEventListener('click',showAppInfo,false);
-settingsButton.addEventListener('click',showSettings,false);
-disclaimerButton.addEventListener('click',showDisclaimer,false);
-
-
 function keyboardInputHandler(event){
     if(event.which===32){
         if(!spacebarPressedCount){
