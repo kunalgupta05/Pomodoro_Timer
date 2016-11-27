@@ -23,3 +23,5 @@ var settingsButton=document.getElementById('settingsButton');
 var disclaimerButton=document.getElementById('disclaimerButton');
 var enableNotifications=document.getElementById('enableNotifications');
 var alarmSound = document.getElementById('alarmSound');
+var volume = document.getElementById('volume');
+var resetSettings = document.getElementById('resetSettings');

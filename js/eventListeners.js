@@ -18,3 +18,4 @@ aboutButton.addEventListener('click',showAppInfo,false);
 settingsButton.addEventListener('click',showSettings,false);
 disclaimerButton.addEventListener('click',showDisclaimer,false);
 enableNotifications.addEventListener('click',notifyPermission,false);
+resetSettings.addEventListener('click',resetSoundSettings,false);

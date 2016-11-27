@@ -232,3 +232,9 @@ function notifyPermission() {
         Notification.requestPermission();
     }
 }
+
+// function which will reset the sound settings to default state
+function resetSoundSettings(){
+    alarmSound.value = 'ding';
+    volume.value = '0.5';
+}
