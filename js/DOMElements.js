@@ -22,3 +22,4 @@ var aboutButton=document.getElementById('aboutButton');
 var settingsButton=document.getElementById('settingsButton');
 var disclaimerButton=document.getElementById('disclaimerButton');
 var enableNotifications=document.getElementById('enableNotifications');
+var alarmSound = document.getElementById('alarmSound');

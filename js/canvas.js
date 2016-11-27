@@ -17,6 +17,12 @@ function Timer(canvas) {
     this.ctx = canvas.getContext('2d');
 }
 
+function playSound(soundId){
+    console.log(soundId);
+    var audio = document.getElementById(soundId+"");
+    audio.play();
+}
+
 // function which notifies the user regarding the completion of pomodoros,shortBreaks,and longbreaks
 function desktopAlert(message){
     if(!Notification){
@@ -39,11 +45,13 @@ function desktopAlert(message){
 function checkPomodoroCount(ts){
     if(!ts && timerStarted && tabStatus.pomodoro){                
         if(pomodoroCount===4){
+            playSound(alarmSound.value);
             pomodoroCount=0;
             desktopAlert("You have been at it for a long time now, you deserve a longer break.");
             longBreakTimer("true");
         }
-        else{            
+        else{
+            playSound(alarmSound.value);
             pomodoroCount++;
             desktopAlert("Good concentration, now relax and take a short break before resuming.");
             shortBreakTimer("true");
@@ -51,7 +59,8 @@ function checkPomodoroCount(ts){
         return true;
     }         
     if(!ts && timerStarted && ((tabStatus.shortBreak && pomodoroCount) || tabStatus.longBreak)){
-        desktopAlert("Stop procrastinating, time to concentrate again.");
+        playSound(alarmSound.value);
+        desktopAlert("Time to concentrate again.");
         pomodoroTimer("true");
         return true;
     }    
