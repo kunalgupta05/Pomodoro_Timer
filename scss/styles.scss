@@ -127,6 +127,12 @@ header {
         select{
             width: 100%;
         }
+        button{
+            margin: 5px;
+            &:hover{
+                background-color: darken(#eee, 10%);
+            }
+        }
     }
 }
 
