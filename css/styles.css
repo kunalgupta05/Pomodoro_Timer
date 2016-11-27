@@ -26,6 +26,7 @@ header .app__info__buttons {
 }
 
 header .app__info__buttons button {
+  color: #eee;
   height: 35px;
   width: 100px;
   border: 0;
@@ -201,4 +202,22 @@ header .app__info__buttons button:hover, header .app__info__buttons button:focus
 
 #disclaimerModal {
   padding-top: 10%;
+}
+
+@media (max-width: 810px) {
+  header #brand__title {
+    font-size: 2em;
+  }
+  header .app__info__buttons button {
+    width: 85px;
+  }
+  .main_body .pomodoro_timer_buttons button {
+    width: 220px;
+  }
+  .shortcuts_notifications_container .keyboard_shortcuts {
+    width: 360px;
+  }
+  .shortcuts_notifications_container .desktop_notifications {
+    width: 360px;
+  }
 }

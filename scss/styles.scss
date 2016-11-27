@@ -21,6 +21,7 @@ header {
     .app__info__buttons {
         display: flex;
         button {
+            color:#eee;
             @include buttonStyles(35px, 100px, $header-buttons-color, $header-buttons-borderColor);
         }
     }
@@ -46,7 +47,7 @@ header {
             @include buttonStyles(55px, 100px, gray);
             font-weight: bold;
             margin: 20px;
-            border-radius: 5px;    
+            border-radius: 5px;
         }
         #startButton {
             background-color: $start-button-color;
@@ -64,39 +65,39 @@ header {
                 outline: none;
             }
         }
-    }    
+    }
 }
 
-.shortcuts_notifications_container{
-    @include flex(center,space-around);
+.shortcuts_notifications_container {
+    @include flex(center, space-around);
     padding-top: 10px;
     margin-bottom: 20px;
     box-sizing: border-box;
-    .keyboard_shortcuts{
+    .keyboard_shortcuts {
         @include shortcutNotificationsContainerStyles();
-        #keyboard__shortcuts__heading{
+        #keyboard__shortcuts__heading {
             font-size: 1.2em;
             font-weight: bold;
         }
-        .shortcuts-list{
+        .shortcuts-list {
             padding: 15px;
-            ul{
+            ul {
                 padding: 5px;
             }
         }
     }
-    .desktop_notifications{
+    .desktop_notifications {
         @include shortcutNotificationsContainerStyles();
-        #desktop__notifications__heading{
+        #desktop__notifications__heading {
             font-size: 1.2em;
             font-weight: bold;
         }
-        .notifications__content{
+        .notifications__content {
             padding: 10px;
-            div{
+            div {
                 padding: 5px;
             }
-            button{
+            button {
                 margin-top: 10px;
                 background-color: $enable-desktop-button-color;
                 color: white;
@@ -108,7 +109,6 @@ header {
 // Modal Styles
 #resetTimerModal {
     padding-top: 10%;
-    
     .modal-body {
         @include flex(center, center);
         flex-direction: column;
@@ -122,20 +122,50 @@ header {
     }
 }
 
-#settingsModal{
-    .modal-body{
-        select{
+#settingsModal {
+    .modal-body {
+        select {
             width: 100%;
         }
-        button{
+        button {
             margin: 5px;
-            &:hover{
+            &:hover {
                 background-color: darken(#eee, 10%);
             }
         }
     }
 }
 
-#disclaimerModal{
+#disclaimerModal {
     padding-top: 10%;
+}
+
+// Media Queries
+
+@media (max-width:810px){
+    header{
+        #brand__title{
+            font-size: $bp1-brand-title-size;
+        }
+        .app__info__buttons{
+            button{
+                width: $bp1-app-info-buttons-width;
+            }
+        }
+    } 
+    .main_body{
+        .pomodoro_timer_buttons{
+            button{
+                width:$bp1-timer-buttons-width;
+            }
+        }
+    }
+    .shortcuts_notifications_container{
+        .keyboard_shortcuts{
+            width: $bp1-shortcuts-notifications-container-width;
+        }
+        .desktop_notifications{
+            width: $bp1-shortcuts-notifications-container-width;
+        }
+    }
 }
