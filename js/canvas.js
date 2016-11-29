@@ -7,7 +7,7 @@ function Timer(canvas) {
     this.TIMER_BORDER = 3;
     this.TIMER_COLOR1 = "#ececec";
     this.TIMER_COLOR2 = "#3366CC";
-    this.TIMER_DURATION = 60000;
+    this.TIMER_DURATION = 1500000;
     this.TIME_ELAPSED = 0;
     this.DOT_RADIUS = 6;
     this.MAXFPS = 60;

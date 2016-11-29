@@ -230,7 +230,7 @@ function showDisclaimer() {
 function notifyPermission() {
     if (Notification.permission !== "granted") {
         Notification.requestPermission();
-    }
+    }    
 }
 
 // function which will reset the sound settings to default state
