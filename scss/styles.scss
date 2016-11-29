@@ -169,3 +169,29 @@ header {
         }
     }
 }
+
+@media (max-width:763px){
+    header{
+        flex-direction: column;
+        height: $bp2-header-height;
+        #brand__title{
+            font-size: $bp2-brand-title-size;
+        }
+        .app__info__buttons {
+            padding-bottom: 10px;
+            button{
+                width: $bp2-app-info-buttons-width;
+            }
+            
+        }
+    }
+    .main_body{
+        padding-top: 25px;
+    }
+
+    .shortcuts_notifications_container{
+        .keyboard_shortcuts{
+            margin-right: 15px;
+        }        
+    }
+}
