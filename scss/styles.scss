@@ -188,10 +188,28 @@ header {
     .main_body{
         padding-top: 25px;
     }
-
     .shortcuts_notifications_container{
         .keyboard_shortcuts{
             margin-right: 15px;
         }        
+    }
+}
+
+@media (max-width:700px){
+    .main_body{
+        .pomodoro_timer_buttons{
+            button{
+                width: $bp3-timer-buttons-width;
+            }
+        }
+    }
+    .shortcuts_notifications_container{
+        .keyboard_shortcuts{
+            width: $bp3-shortcuts-notifications-container-width;
+            margin-right: 20px;
+        }
+        .desktop_notifications{
+            width: $bp3-shortcuts-notifications-container-width;
+        }
     }
 }
