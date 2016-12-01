@@ -213,3 +213,19 @@ header {
         }
     }
 }
+
+@media (max-width:600px){
+    header{
+        height: $bp4-header-height;
+        .app__info__buttons{
+            width: 100%;
+            align-items: center;
+            flex-direction: column;
+            button{
+                width: 90%;
+                text-align: justify;
+                padding-left: 25px;
+            }
+        }
+    }
+}
