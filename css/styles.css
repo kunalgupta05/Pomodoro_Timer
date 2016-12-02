@@ -261,6 +261,9 @@ header .app__info__buttons button:hover, header .app__info__buttons button:focus
   header {
     height: 230px;
   }
+  header #brand__title {
+    font-size: 250%;
+  }
   header .app__info__buttons {
     width: 100%;
     align-items: center;
@@ -295,6 +298,12 @@ header .app__info__buttons button:hover, header .app__info__buttons button:focus
     width: 80vw;
   }
   .shortcuts_notifications_container .desktop_notifications .notifications__content button {
-    margin-top: 20px;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 410px) {
+  header #brand__title {
+    font-size: 200%;
   }
 }
