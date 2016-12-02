@@ -225,7 +225,19 @@ header {
                 width: 90%;
                 text-align: justify;
                 padding-left: 25px;
+                border-bottom: 1px solid black;
             }
+        }
+    }
+
+    .main_body{
+        .pomodoro_timer_buttons{
+            button{
+                width: 30vw;
+            }
+        }
+        #myCanvas{
+            padding-top: 35px;
         }
     }
 }
