@@ -278,4 +278,23 @@ header .app__info__buttons button:hover, header .app__info__buttons button:focus
   .main_body #myCanvas {
     padding-top: 35px;
   }
+  .main_body .user_action_buttons button {
+    margin: 10px;
+    width: 80px;
+  }
+  .shortcuts_notifications_container {
+    padding-top: 20px;
+    flex-direction: column;
+  }
+  .shortcuts_notifications_container .keyboard_shortcuts {
+    width: 80vw;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  .shortcuts_notifications_container .desktop_notifications {
+    width: 80vw;
+  }
+  .shortcuts_notifications_container .desktop_notifications .notifications__content button {
+    margin-top: 20px;
+  }
 }

@@ -239,5 +239,29 @@ header {
         #myCanvas{
             padding-top: 35px;
         }
+        .user_action_buttons{
+            button{
+                margin: 10px;
+                width: 80px;
+            }
+        }
+    }
+
+    .shortcuts_notifications_container{
+        padding-top: 20px;
+        flex-direction: column;
+        .keyboard_shortcuts{
+            width: 80vw;            
+            margin: 0;
+            margin-bottom: 20px;
+        }
+        .desktop_notifications{
+            width: 80vw;
+            .notifications__content{
+                button{
+                    margin-top: 20px;
+                }
+            }
+        }
     }
 }
