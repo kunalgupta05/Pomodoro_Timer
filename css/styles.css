@@ -306,4 +306,7 @@ header .app__info__buttons button:hover, header .app__info__buttons button:focus
   header #brand__title {
     font-size: 200%;
   }
+  .shortcuts_notifications_container .desktop_notifications .notifications__content {
+    margin-top: 5px;
+  }
 }
