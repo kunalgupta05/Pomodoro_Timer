@@ -49,20 +49,20 @@ function checkPomodoroCount(ts){
         if(pomodoroCount===4){
             //playSound(alarmSound.value,volume.value);
             pomodoroCount=0;
-            desktopAlert("You have been at it for a long time now, you deserve a longer break.");
+            //desktopAlert("You have been at it for a long time now, you deserve a longer break.");
             longBreakTimer("true");
         }
         else{
             //playSound(alarmSound.value,volume.value);
             pomodoroCount++;
-            desktopAlert("Good concentration, now relax and take a short break before resuming.");
+            //desktopAlert("Good concentration, now relax and take a short break before resuming.");
             shortBreakTimer("true");
         }        
         return true;
     }         
     if(!ts && timerStarted && ((tabStatus.shortBreak && pomodoroCount) || tabStatus.longBreak)){
         //playSound(alarmSound.value,volume.value);
-        desktopAlert("Time to concentrate again.");
+        //desktopAlert("Time to concentrate again.");
         pomodoroTimer("true");
         return true;
     }    
