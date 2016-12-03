@@ -108,7 +108,7 @@ header {
 
 // Modal Styles
 #resetTimerModal {
-    padding-top: 10%;
+    margin-top: 10vh;
     .modal-body {
         @include flex(center, center);
         flex-direction: column;
@@ -123,6 +123,7 @@ header {
 }
 
 #settingsModal {
+    margin-top: 7vh;
     .modal-body {
         select {
             width: 100%;
@@ -137,7 +138,7 @@ header {
 }
 
 #disclaimerModal {
-    padding-top: 10%;
+    margin-top: 10vh;
 }
 
 // Media Queries for adding responsiveness
@@ -276,7 +277,10 @@ header {
     .shortcuts_notifications_container{
         .desktop_notifications{
             .notifications__content{
-                margin-top: 5px;
+                button{
+                    margin-top: 0;
+                }
+                
             }
         }
     }
