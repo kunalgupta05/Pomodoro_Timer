@@ -47,13 +47,13 @@ function desktopAlert(message){
 function checkPomodoroCount(ts){
     if(!ts && timerStarted && tabStatus.pomodoro){                
         if(pomodoroCount===4){
-            playSound(alarmSound.value,volume.value);
+            //playSound(alarmSound.value,volume.value);
             pomodoroCount=0;
             desktopAlert("You have been at it for a long time now, you deserve a longer break.");
             longBreakTimer("true");
         }
         else{
-            playSound(alarmSound.value,volume.value);
+            //playSound(alarmSound.value,volume.value);
             pomodoroCount++;
             desktopAlert("Good concentration, now relax and take a short break before resuming.");
             shortBreakTimer("true");
@@ -61,7 +61,7 @@ function checkPomodoroCount(ts){
         return true;
     }         
     if(!ts && timerStarted && ((tabStatus.shortBreak && pomodoroCount) || tabStatus.longBreak)){
-        playSound(alarmSound.value,volume.value);
+        //playSound(alarmSound.value,volume.value);
         desktopAlert("Time to concentrate again.");
         pomodoroTimer("true");
         return true;
